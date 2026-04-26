@@ -11,3 +11,19 @@ test("Login Form Validation", { tag: ["@smoke"] }, async ({ page }) => {
   const greeting = page.locator("//h1[text()='Welcome Bohdana']");
   await expect(greeting).toHaveText("Welcome Bohdana");
 });
+
+test("Validdate Checkbox", { tag: ["@regression"] }, async ({ page }) => {
+  await page.goto("https://example.com/settings");
+
+  const checkedCheckbox = page.locator("#terms");
+  const saveBtn = page.getByRole("button", { name: "Save" });
+
+  await checkedCheckbox.check();
+  await expect(checkedCheckbox).toBeChecked();
+
+  await saveBtn.click();
+  await expect(saveBtn).toBeEnabled();
+
+  const successMessage = page.locator("//div[text()='Saved Successfully']");
+  await expect(successMessage).toHaveText("Saved Successfully");
+});
