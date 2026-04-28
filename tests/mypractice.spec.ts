@@ -27,5 +27,6 @@ test("Validdate Checkbox", { tag: ["@regression"] }, async ({ page }) => {
   const successMessage = page.locator("//div[text()='Saved Successfully']");
   await expect(successMessage).toHaveText("Saved Successfully");
 });
+///  practicing around test .
 
-//test merge conflict
+///nnnn
