@@ -28,3 +28,4 @@ test("Validdate Checkbox", { tag: ["@regression"] }, async ({ page }) => {
   await expect(successMessage).toHaveText("Saved Successfully");
 });
 ///  practicing around test
+/// writing new line
